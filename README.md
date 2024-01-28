@@ -6,7 +6,7 @@
 
 Twifiner is a browser extension that enhances your Twitter experience by removing ads, reducing clutter, and providing cool features like easier word muting, original URL display instead of t.co links, account age display, and more.
 
-https://twifiner.github.io
+https://twifiner.ir
 
 **Supported Most Popular Browsers:**
 
