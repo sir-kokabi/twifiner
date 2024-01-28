@@ -5,7 +5,7 @@ import Toggle from "~popup/components/Toggle"
 const Header = () => {
   return (
     <div className="flex justify-between items-center">
-      <a href="https://twifiner.com" target="_blank">
+      <a href="https://twifiner.ir" target="_blank">
         <div className="flex py-4 items-center">
           <img src={logoAsBase64} alt="Twifiner" className="w-10 h-10" />
           <div className="ps-2">
