@@ -1,0 +1,41 @@
+name: Publish
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:    
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Install Node
+      uses: actions/setup-node@v4      
+      with:
+        node-version: latest
+    
+    - name: Install pnpm
+      uses: pnpm/action-setup@v2
+      with:
+        version: latest
+      
+
+    - name: Install packages
+      run: pnpm i
+
+    - name: Package Extension
+      run: pnpm package
+
+    - name: Get version
+      id: version
+      uses: martinbeentjes/npm-get-version-action@v1.3.1
+
+    - name: Rename package
+      run:  mv ./build/chrome-mv3-prod.zip ./build/twifiner-${{ steps.version.outputs.current-version }}.zip
+
+    - name: Release
+      uses: softprops/action-gh-release@v1      
+      with:
+        tag_name: ${{ steps.version.outputs.current-version }}
+        files: ./build/twifiner-${{ steps.version.outputs.current-version }}.zip

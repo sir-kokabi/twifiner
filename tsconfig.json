@@ -1,0 +1,19 @@
+{
+  "extends": "plasmo/templates/tsconfig.base",
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    ".plasmo/index.d.ts",
+    "./**/*.ts",
+    "./**/*.tsx"
+, "src/xpaths.js", "src/cont/index.js", "src/utils.js", "src/popup/index.jsx", "src/cont/shared.js", "src/cont/index.js", "src/contents/index.js", "src/contents/inject.js", "src/background/index.ts"  ],
+  "compilerOptions": {
+    "paths": {
+      "~*": [
+        "./src/*"
+      ]
+    },
+    "baseUrl": "."
+  }
+}
