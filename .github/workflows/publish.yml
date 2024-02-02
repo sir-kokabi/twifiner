@@ -38,5 +38,6 @@ jobs:
     - name: Release
       uses: softprops/action-gh-release@v1      
       with:
+        token: ${{ github.token }}
         tag_name: ${{ steps.version.outputs.current-version }}
         files: ./build/twifiner-${{ steps.version.outputs.current-version }}.zip
