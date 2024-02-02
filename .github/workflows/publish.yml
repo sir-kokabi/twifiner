@@ -3,11 +3,9 @@ name: Publish
 on:
   workflow_dispatch:
 
-permissions:
-  contents: write
-
 jobs:
-  publish:    
+  publish:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
