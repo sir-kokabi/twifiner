@@ -1,4 +1,4 @@
-# twifiner
+# twifiner ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/sir-kokabi/twifiner/total)
 
 ## Fine-tune your 𝕏 (twitter) experience
 
