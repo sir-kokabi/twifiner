@@ -8,7 +8,7 @@ Twifiner is a browser extension that enhances your Twitter experience by removin
 
 https://twifiner.ir
 
-**Supported Most Popular Browsers:**
+**Supported All Chromium-based Browsers:** (Firefox & Safari support coming soon)
 
 <img src="icons/browsers.svg" alt="supported browsers" width="140"/>
 
