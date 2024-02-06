@@ -111,10 +111,6 @@ Then follow the instructions below to install Twifiner in your browser:
 
 ![](icons/install.gif)
 
-<a href="https://github.com/sir-kokabi/twifiner/releases/latest">
-    <img src="icons/download.svg" alt="download" width="140"/>
-</a>
-
 ## Contributing
 
 - Install dependencies: `npm install`
