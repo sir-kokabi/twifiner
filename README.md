@@ -99,14 +99,15 @@ https://twifiner.ir
 
 ![](images/19.gif)
 
-## Manual Build
+## Hot to install
 
-- Clone the repo
-- `npm install`
-- `npm run package`
-- Find `chrome-mv3-prod.zip` in the `build` folder.
+First download the latest release:
 
-## Installation
+<a href="https://github.com/sir-kokabi/twifiner/releases/latest">
+<img src="icons/download.svg" alt="download" width="140"/>
+</a>
+
+Then follow the instructions below to install Twifiner in your browser:
 
 ![](icons/install.gif)
 
@@ -114,7 +115,25 @@ https://twifiner.ir
     <img src="icons/download.svg" alt="download" width="140"/>
 </a>
 
+## Contributing
+
+- Install dependencies: `npm install`
+- Start the dev server: `npm run dev` (watches for changes & reloads extension)
+
+- Load the extension in Chrome:
+    - Go to `chrome://extensions`
+    - Enable `Developer mode`
+    - Drag & drop `build/chrome-mv3-dev` directory onto this page
+
+- Create a production build:
+    - `npm run build`, 
+    - create a production zip bundle: `npm run package`, 
+    - The final bundle will be available in the `build/chrome-mv3-prod.zip`
+
+- For more guidance, read [plasmo docs](https://docs.plasmo.com/):
+
 ## Support
+
 If you like this project, please consider supporting it with a star ⭐ or a donation. Every donation, no matter how small, is greatly appreciated.
 
 - Bitcoin: **1LUbbaAGKFkaSXgDhD4AAc8i2kipW6Qh2R**
