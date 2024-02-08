@@ -454,7 +454,7 @@ const items = [
         const value = await readStorageAsBoolean(
           "change_replying_to_tweets_style"
         )
-        element.style.backgroundColor = value ? "#eceeee" : ""
+        element.style.backgroundColor = value ? utils.bgColorForCurrentTheme() : ""
       } catch (error) {}
     }
   },
@@ -479,8 +479,9 @@ const items = [
     applyStyle: async (element) => {
       try {
         const value = await readStorageAsBoolean(
-          "change_followings_style_in_followers_page"        )  
-        element.style.backgroundColor = value ? "#eceeee" : ""
+          "change_followings_style_in_followers_page")
+        
+        element.style.backgroundColor = value ? utils.bgColorForCurrentTheme() : ""
       } catch (error) {}
     }
   },
@@ -495,7 +496,7 @@ const items = [
         const value = await readStorageAsBoolean(
           "change_followers_style_in_following_page"
         )
-        element.style.backgroundColor = value ? "#eceeee" : ""  
+        element.style.backgroundColor = value ? utils.bgColorForCurrentTheme() : ""  
       } catch (error) {}
     }
   },
@@ -642,9 +643,9 @@ const items = [
     page: "profile",
     xpath: "//div[@data-testid='socialContext']/ancestor::*[14]",
     applyStyle: async (element) => {
-      try {
+      try {        
         const value = await readStorageAsBoolean("change_pinned_tweet_style")
-        element.style.backgroundColor = value ? "#eceeee" : ""
+        element.style.backgroundColor = value ? utils.bgColorForCurrentTheme() : ""
       } catch (error) {}
     }
   },

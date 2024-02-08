@@ -214,6 +214,13 @@ function formatGhamariDate(date) {
   return formattedGhamariDate;
 }
 
+function bgColorForCurrentTheme(){
+  const themeColor = document.querySelector('meta[name="theme-color"]').getAttribute("content");
+  if (themeColor === "#000000") return "#202327";
+  if (themeColor==="#15202B") return "#273340";
+  return "#eceeee";  
+}
+
 function formatAllDates(datetime) {
   const [time, date] = datetime.split(" · ");
   const formattedShamsi = formatShamsiDate(date);
@@ -234,5 +241,6 @@ export {
   getFavIcon,
   formatAllDates,
   evaluateXpath,
-  fetchText
+  fetchText,
+  bgColorForCurrentTheme
 }
