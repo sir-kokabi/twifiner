@@ -3,7 +3,7 @@ import "./styles.css"
 import {
   readStorageAsBoolean,
   readStorageAsString,
-  watchSettings,
+  watchSettings
 } from "~storage"
 import * as utils from "~utils"
 
@@ -12,7 +12,7 @@ export const config = {
 }
 
 const items = [
-  //global  
+  //global
   {
     // "increase zindex",
     page: "",
@@ -30,15 +30,15 @@ const items = [
       try {
         if (element.classList.contains("twifiner-account-menu")) return
         //const value = await readStorageAsBoolean("move_account_menu_to_top")
-        const container = element.parentElement;
-        container.style.justifyContent = "flex-start";
-        container.removeChild(element);
-        element.classList.add("twifiner-account-menu");
-        container.prepend(element);
+        const container = element.parentElement
+        container.style.justifyContent = "flex-start"
+        container.removeChild(element)
+        element.classList.add("twifiner-account-menu")
+        container.prepend(element)
       } catch (error) {}
     }
   },
- 
+
   {
     // "display_logo_button",
     page: "",
@@ -55,7 +55,7 @@ const items = [
     page: "",
     xpath: "//nav[@aria-label='Primary']//a[@aria-label='Search and explore']",
     applyStyle: async (element) => {
-      try {        
+      try {
         const value = await readStorageAsBoolean("display_explore_button")
         element.style.display = value ? "flex" : "none"
       } catch (error) {}
@@ -66,7 +66,7 @@ const items = [
     page: "",
     xpath: "//nav[@aria-label='Primary']//a[@aria-label='Grok']",
     applyStyle: async (element) => {
-      try {        
+      try {
         const value = await readStorageAsBoolean("display_grok_button")
         element.style.display = value ? "flex" : "none"
       } catch (error) {}
@@ -212,8 +212,8 @@ const items = [
     xpath: "//div[@data-testid='tweetText']/span[not(*)]",
     applyStyle: async (element) => {
       try {
-        //const value = await readStorageAsBoolean("clean_tweet_text")
-        const text = element.textContent
+        const value = await readStorageAsBoolean("clean_tweet_text")
+        const text = element.textContent;        
         const normalizedText = utils.cleanupText(text)
         element.textContent = normalizedText
       } catch (error) {}
@@ -226,10 +226,11 @@ const items = [
     applyStyle: async (element) => {
       try {
         //const value = await readStorageAsBoolean("make_rtl")
-        const text = element.innerText
+        const text = element.innerText        
 
         const isRtl = await utils.isRTL(text)
         if (isRtl) {
+          element.style.fontFamily = "Vazirmatn";
           element.style.direction = "rtl"
           element.style.textAlign = "right"
         } else {
@@ -353,9 +354,9 @@ const items = [
           const children = Array.from(element.children)
           children.forEach((currentChild, index) => {
             const nextChild = children[index + 1]
-            if (nextChild===undefined) return;            
+            if (nextChild === undefined) return
             if (
-              currentChild &&              
+              currentChild &&
               currentChild.tagName === "IMG" &&
               nextChild &&
               nextChild.tagName === "IMG"
@@ -419,7 +420,6 @@ const items = [
         if (timeLineWidth === "wide") width = "700px"
 
         element.style.maxWidth = width
-        
 
         element.style.marginRight = "30px"
 
@@ -454,7 +454,9 @@ const items = [
         const value = await readStorageAsBoolean(
           "change_replying_to_tweets_style"
         )
-        element.style.backgroundColor = value ? utils.bgColorForCurrentTheme() : ""
+        element.style.backgroundColor = value
+          ? utils.bgColorForCurrentTheme()
+          : ""
       } catch (error) {}
     }
   },
@@ -475,13 +477,17 @@ const items = [
   {
     // "change_followings_style_in_followers_page",
     page: "followers",
-    xpath: '//div[@aria-label="Timeline: Followers"]//div[starts-with(@aria-label,"Following")]/ancestor::div[@data-testid="cellInnerDiv"]',
+    xpath:
+      '//div[@aria-label="Timeline: Followers"]//div[starts-with(@aria-label,"Following")]/ancestor::div[@data-testid="cellInnerDiv"]',
     applyStyle: async (element) => {
       try {
         const value = await readStorageAsBoolean(
-          "change_followings_style_in_followers_page")
-        
-        element.style.backgroundColor = value ? utils.bgColorForCurrentTheme() : ""
+          "change_followings_style_in_followers_page"
+        )
+
+        element.style.backgroundColor = value
+          ? utils.bgColorForCurrentTheme()
+          : ""
       } catch (error) {}
     }
   },
@@ -496,7 +502,9 @@ const items = [
         const value = await readStorageAsBoolean(
           "change_followers_style_in_following_page"
         )
-        element.style.backgroundColor = value ? utils.bgColorForCurrentTheme() : ""  
+        element.style.backgroundColor = value
+          ? utils.bgColorForCurrentTheme()
+          : ""
       } catch (error) {}
     }
   },
@@ -643,9 +651,11 @@ const items = [
     page: "profile",
     xpath: "//div[@data-testid='socialContext']/ancestor::*[14]",
     applyStyle: async (element) => {
-      try {        
+      try {
         const value = await readStorageAsBoolean("change_pinned_tweet_style")
-        element.style.backgroundColor = value ? utils.bgColorForCurrentTheme() : ""
+        element.style.backgroundColor = value
+          ? utils.bgColorForCurrentTheme()
+          : ""
       } catch (error) {}
     }
   },
@@ -702,7 +712,7 @@ const items = [
     // "display_discover_more",
     page: "tweet",
     xpath:
-    "//span[text()='Discover more']/ancestor::*[6]//following-sibling::node()",
+      "//span[text()='Discover more']/ancestor::*[6]//following-sibling::node()",
     applyStyle: async (element) => {
       try {
         const value = await readStorageAsBoolean("display_discover_more")
@@ -711,7 +721,7 @@ const items = [
     }
   },
   //Other
-  
+
   {
     // "is_label_shown",
     page: "",
@@ -776,7 +786,7 @@ function applyStyles() {
       const regexPattern = regexPatterns[item.page]
       if (regexPattern && !regexPattern.test(url)) return
 
-      const elements = utils.evaluateXpath(item.xpath);
+      const elements = utils.evaluateXpath(item.xpath)
 
       for (let i = 0; i < elements.snapshotLength; i++) {
         const element = elements.snapshotItem(i)
