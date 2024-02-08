@@ -3,6 +3,7 @@ import type { PlasmoCSConfig } from "plasmo"
 import React, { useState } from "react"
 import { createRoot } from "react-dom/client"
 import { RiDraftLine } from "react-icons/ri"
+import * as utils from "~utils"
 
 import { readStorageAsBoolean, watchSettings } from "~storage"
 
@@ -36,6 +37,29 @@ export const getStyle = () => {
 
 const DraftsButton = () => {
   const [display, setDisplay] = useState(true)
+  const [isHovering, setIsHovering] = useState(false)
+
+  const handleMouseEnter = () => {
+    setIsHovering(true)
+  }
+
+  const handleMouseLeave = () => {
+    setIsHovering(false)
+  }
+
+  let bgHoverColor = "#e7e7e8"
+  let bgColor = "#ffffff"
+
+  if (utils.getCurrentTheme() === "dark") {
+    bgHoverColor = "#181818"
+    bgColor = "#000000"
+  } else if (utils.getCurrentTheme() === "dim") {
+    bgHoverColor = "#2c3640"
+    bgColor = "#15202b"
+  } else {
+    bgHoverColor = "#e7e7e8"
+    bgColor = "#ffffff"
+  }
 
   watchSettings(() => {
     readStorageAsBoolean("display_drafts_button").then((value) => {
@@ -49,7 +73,12 @@ const DraftsButton = () => {
         id="drafts-button"
         href={`https://twitter.com/compose/tweet/unsent/drafts`}
         aria-label="Drafts"
-        className="flex items-center no-underline decoration-inherit text-inherit p-3 hover:bg-[#e7e7e8] hover:rounded-full hover: text-[#0f1419]"
+        style={{
+          backgroundColor: isHovering ? bgHoverColor : bgColor
+        }}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        className="flex items-center no-underline decoration-inherit text-inherit p-3 rounded-full"
         role="link">
         <RiDraftLine className="w-[22px] h-[22px]" />
 

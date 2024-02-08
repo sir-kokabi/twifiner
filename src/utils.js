@@ -221,6 +221,13 @@ function bgColorForCurrentTheme(){
   return "#eceeee";  
 }
 
+function getCurrentTheme(){
+  const themeColor = document.querySelector('meta[name="theme-color"]').getAttribute("content");
+  if (themeColor === "#000000") return "dark";
+  if (themeColor==="#15202B") return "dim";
+  return "light";  
+}
+
 function formatAllDates(datetime) {
   const [time, date] = datetime.split(" · ");
   const formattedShamsi = formatShamsiDate(date);
@@ -242,5 +249,6 @@ export {
   formatAllDates,
   evaluateXpath,
   fetchText,
-  bgColorForCurrentTheme
+  bgColorForCurrentTheme,
+  getCurrentTheme
 }
