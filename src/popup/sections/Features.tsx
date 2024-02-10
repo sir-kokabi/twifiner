@@ -40,6 +40,11 @@ const Features = () => {
         id="replace_link_with_title"        
         title="Replace t.co links with title *"
       />
+      <Toggle
+        id="highlight_mutuals_friends"        
+        title="Highlight mutuals friends *"
+        tooltip="In following, followers and verified followers page"
+      />
     
     </div>
 

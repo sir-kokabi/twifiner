@@ -494,14 +494,14 @@ const items = [
   },
   //https://twitter.com/[username]/followers
   {
-    // "change_followings_style_in_followers_page",
+    // "highlight_mutuals_friends",
     page: "followers",
     xpath:
       '//div[@aria-label="Timeline: Followers"]//div[starts-with(@aria-label,"Following")]/ancestor::div[@data-testid="cellInnerDiv"]',
     applyStyle: async (element) => {
       try {
         const value = await readStorageAsBoolean(
-          "change_followings_style_in_followers_page"
+          "highlight_mutuals_friends"
         )
 
         element.style.backgroundColor = value
@@ -512,14 +512,14 @@ const items = [
   },
   // https://twitter.com/[username]/following
   {
-    // "change_followers_style_in_following_page",
+    // "highlight_mutuals_friends",
     page: "following",
     xpath:
       '//div[@aria-label="Timeline: Following"]//span[contains(text(), "Follows you")]/ancestor::div[@data-testid="cellInnerDiv"]',
     applyStyle: async (element) => {
       try {
         const value = await readStorageAsBoolean(
-          "change_followers_style_in_following_page"
+          "highlight_mutuals_friends"
         )
         element.style.backgroundColor = value
           ? utils.bgColorForCurrentTheme()
