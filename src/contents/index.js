@@ -1,5 +1,5 @@
 import "./styles.css"
-
+import moment from "moment"
 import {
   readStorageAsBoolean,
   readStorageAsString,
@@ -661,8 +661,9 @@ const items = [
         )
           return
 
-        const datetime = element.textContent.replace("Joined ", "").trim()
-        element.textContent = "Joined " + utils.getRoundedAge(datetime) + " ago"
+        const monthYear = element.textContent.replace("Joined ", "").trim() // June 2012
+        const isoDate = moment(monthYear, "MMMM YYYY").format('YYYY-MM-DD');     
+        element.textContent = "Joined " + utils.getRoundedAge(isoDate) + " ago"
       } catch (error) {}
     }
   },
