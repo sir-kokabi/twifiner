@@ -28,8 +28,9 @@ const items = [
     xpath: '//div[@aria-label="Account menu"]/ancestor::div[2]',
     applyStyle: async (element) => {
       try {
-        if (element.classList.contains("twifiner-account-menu")) return
-        //const value = await readStorageAsBoolean("move_account_menu_to_top")
+        const value = await readStorageAsBoolean("move_account_menu_to_top");
+        if (!value) return;
+        if (element.classList.contains("twifiner-account-menu")) return;
         const container = element.parentElement
         container.style.justifyContent = "flex-start"
         container.removeChild(element)

@@ -51,7 +51,11 @@ const Features = () => {
       />
       <Toggle
         id="highlight_replying_notification"        
-        title="Highlight replying notification"    
+        title="Highlight replying notifications"    
+      />
+      <Toggle
+        id="move_account_menu_to_top"        
+        title="Move account menu to top"    
       />
     
     </div>
