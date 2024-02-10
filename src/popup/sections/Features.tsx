@@ -6,7 +6,7 @@ const Features = () => {
     <>
     <div className="flex flex-col justify-center">
       <TimelineButtonGroup id="timeline_width" />
-
+      <p className="text-sm text-black mt-6">Some following features may require a page refresh to display changes:</p>
       <Toggle id="display_trends_panel" title="Display Trends" />
       <Toggle id="display_whoToFollow_panel" title="Display Who to follow" />
       
@@ -26,11 +26,11 @@ const Features = () => {
       />
       <Toggle
         id="clean_tweet_text"        
-        title="Clean persian tweets *"                
+        title="Clean persian tweets"                
       />
       <Toggle
         id="change_hashtags_styles"        
-        title="Make hashtags pop *"        
+        title="Make hashtags pop"        
       />
       <Toggle
         id="display_ads_tweets"        
@@ -38,17 +38,22 @@ const Features = () => {
       />
       <Toggle
         id="replace_link_with_title"        
-        title="Replace t.co links with title *"
+        title="Replace t.co links with title"
       />
       <Toggle
         id="highlight_mutuals_friends"        
-        title="Highlight mutuals friends *"
+        title="Highlight mutuals friends"
+        tooltip="In following, followers and verified followers page"
+      />
+    
+      <Toggle
+        id="highlight_pinn"        
+        title="Highlight mutuals friends"
         tooltip="In following, followers and verified followers page"
       />
     
     </div>
 
-    <p className="text-xs text-gray-400 mt-6">Features marked with an asterisk (*) require a page refresh to apply changes. </p>
 
     </>
   )
