@@ -247,7 +247,8 @@ const items = [
     xpath: '//div[@data-testid="cellInnerDiv"]//a[@target]',
     applyStyle: async (element) => {
       try {
-        //const value = await readStorageAsBoolean("replace_link_with_title")
+        const value = await readStorageAsBoolean("replace_link_with_title");
+        if (!value) return;
         element.style.textDecoration = "none"
 
         const url = element.href

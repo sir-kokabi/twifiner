@@ -36,6 +36,10 @@ const Features = () => {
         id="display_ads_tweets"        
         title="Display Ads"        
       />
+      <Toggle
+        id="replace_link_with_title"        
+        title="Replace t.co links with title *"
+      />
     
     </div>
 
