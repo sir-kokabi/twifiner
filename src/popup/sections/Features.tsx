@@ -3,6 +3,7 @@ import Toggle from "~popup/components/Toggle"
 
 const Features = () => {
   return (
+    <>
     <div className="flex flex-col justify-center">
       <TimelineButtonGroup id="timeline_width" />
 
@@ -25,11 +26,18 @@ const Features = () => {
       />
       <Toggle
         id="clean_tweet_text"        
-        title="Clean tweet texts"
-        tooltip="Currently available for correcting common mistakes in Persian tweets. Refresh the page after disabling to apply changes."        
+        title="Clean persian tweets *"                
+      />
+      <Toggle
+        id="change_hashtags_styles"        
+        title="Make hashtags pop *"        
       />
     
     </div>
+
+    <p className="text-xs text-gray-400 mt-6">Features marked with an asterisk (*) require a page refresh to apply changes. </p>
+
+    </>
   )
 }
 

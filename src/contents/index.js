@@ -323,7 +323,8 @@ const items = [
     xpath: "//a[starts-with(text(),'#')]",
     applyStyle: async (element) => {
       try {
-        //const value = await readStorageAsBoolean("change_hashtags_styles")
+        const value = await readStorageAsBoolean("change_hashtags_styles")
+        if (value) return;
 
         element.textContent = element.textContent.replace("#", "")
         element.style.cssText = `
