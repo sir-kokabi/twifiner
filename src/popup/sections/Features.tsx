@@ -32,6 +32,10 @@ const Features = () => {
         id="change_hashtags_styles"        
         title="Make hashtags pop *"        
       />
+      <Toggle
+        id="display_ads_tweets"        
+        title="Display Ads"        
+      />
     
     </div>
 
