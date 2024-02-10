@@ -55,7 +55,8 @@ const storageDefaults = {
   display_translate_link: "false",
   timeline_width: "normal",
   display_tooltip_dates_as_shamsi: "true",
-  move_account_menu_to_top: "true"
+  move_account_menu_to_top: "true",
+  display_advanced_search:"true"
 }
 
 const storageItems = Object.keys(storageDefaults)

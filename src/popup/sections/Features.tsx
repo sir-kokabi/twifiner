@@ -57,6 +57,10 @@ const Features = () => {
         id="move_account_menu_to_top"        
         title="Move account menu to top"    
       />
+      <Toggle
+        id="display_advanced_search"        
+        title="Display advanced search"    
+      />
     
     </div>
 

@@ -53,7 +53,8 @@ export const watchSettings = (callback) => {
     'is_label_shown',
     'mutted_texts',
     'display_translate_link',
-    'timeline_width',   
+    'timeline_width',
+    'display_advanced_search'
   ];
 
   settingsToWatch.forEach((setting) => {
