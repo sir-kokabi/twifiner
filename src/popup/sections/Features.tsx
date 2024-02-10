@@ -23,6 +23,11 @@ const Features = () => {
         id="display_tabHeader_in_notifications_page"
         title="Display notification tab header"        
       />
+      <Toggle
+        id="clean_tweet_text"        
+        title="Clean tweet texts"
+        tooltip="Currently available for correcting common mistakes in Persian tweets. Refresh the page after disabling to apply changes."        
+      />
     
     </div>
   )

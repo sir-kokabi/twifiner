@@ -213,6 +213,7 @@ const items = [
     applyStyle: async (element) => {
       try {
         const value = await readStorageAsBoolean("clean_tweet_text")
+        if (!value) return;
         const text = element.textContent;        
         const normalizedText = utils.cleanupText(text)
         element.textContent = normalizedText
