@@ -324,15 +324,31 @@ const items = [
     applyStyle: async (element) => {
       try {
         const value = await readStorageAsBoolean("change_hashtags_styles")
-        if (value) return;
+        if (!value) return;
+
+        const activeTheme = utils.getCurrentTheme();
+        let bgColor = "#f3f4f6"
+        let color = "#1f2937"
+
+        if (activeTheme==="dim"){
+          bgColor = "#2c3640"
+          color = "#ffffff"
+        } else if(activeTheme==="dark"){
+          bgColor = "#181818"
+          color = "#ffffff"
+        } else{
+          bgColor = "#f3f4f6"
+          color = "#1f2937"          
+        }
+
 
         element.textContent = element.textContent.replace("#", "")
         element.style.cssText = `
                 font-weight: 400;
                 font-size: 13px;
-                color: #1f2937;
+                color: ${color};
                 text-decoration: none;
-                background-color: #f3f4f6;
+                background-color: ${bgColor};
                 border-radius: 5px;
                 padding: 2px 8px;`
 
