@@ -44,11 +44,14 @@ const Features = () => {
         id="highlight_mutuals_friends"        
         title="Highlight mutuals friends"
         tooltip="In following, followers and verified followers page"
-      />
-    
+      />    
       <Toggle
         id="highlight_pinned_tweet"        
         title="Highlight pinned tweet"    
+      />
+      <Toggle
+        id="highlight_replying_notification"        
+        title="Highlight replying notification"    
       />
     
     </div>

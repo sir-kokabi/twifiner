@@ -465,13 +465,13 @@ const items = [
     }
   },
   {
-    // "change_replying_to_tweets_style",
+    // "highlight_replying_notification",
     page: "notifications",
     xpath: "//div[starts-with(text(), 'Replying to')]/ancestor::*[9]",
     applyStyle: async (element) => {
       try {
         const value = await readStorageAsBoolean(
-          "change_replying_to_tweets_style"
+          "highlight_replying_notification"
         )
         element.style.backgroundColor = value
           ? utils.bgColorForCurrentTheme()

@@ -31,7 +31,7 @@ const storageDefaults = {
   remove_repetitive_emojies: "true",
   tweet_datetime_as_age: "true",
   display_tabHeader_in_notifications_page: "false",
-  change_replying_to_tweets_style: "true",
+  highlight_replying_notification: "true",
   display_usernames: "false",
   highlight_mutuals_friends: "true",
   change_tweet_datetime_style_in_messages_page: "true",
