@@ -47,9 +47,8 @@ const Features = () => {
       />
     
       <Toggle
-        id="highlight_pinn"        
-        title="Highlight mutuals friends"
-        tooltip="In following, followers and verified followers page"
+        id="highlight_pinned_tweet"        
+        title="Highlight pinned tweet"    
       />
     
     </div>

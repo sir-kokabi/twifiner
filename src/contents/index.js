@@ -666,12 +666,12 @@ const items = [
     }
   },
   {
-    // "change_pinned_tweet_style",
+    // "highlight_pinned_tweet",
     page: "profile",
     xpath: "//div[@data-testid='socialContext']/ancestor::*[14]",
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("change_pinned_tweet_style")
+        const value = await readStorageAsBoolean("highlight_pinned_tweet")
         element.style.backgroundColor = value
           ? utils.bgColorForCurrentTheme()
           : ""

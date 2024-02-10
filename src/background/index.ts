@@ -41,7 +41,7 @@ const storageDefaults = {
   display_gallery: "false",
   display_highlights_tab: "false",
   joined_date_as_age: "true",
-  change_pinned_tweet_style: "true",
+  highlight_pinned_tweet: "true",
   display_usernames_in_search1: "false",
   display_usernames_in_search2: "false",
   display_relevant_people: "false",
