@@ -21,7 +21,7 @@ const storageDefaults = {
   display_more_button: "false",
   display_trends_panel: "false",
   display_whoToFollow_panel: "false",
-  display_ads_tweets: "false",
+  hide_ads_tweets: "true",
   clean_tweet_text: "true",
   display_premium_panel: "false",
   display_footer_panel: "false",

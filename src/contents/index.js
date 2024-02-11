@@ -197,13 +197,13 @@ const items = [
     }
   },
   {
-    // "display_ads_tweets",
+    // "hide_ads_tweets",
     page: "",
     xpath: "//span[text()='Ad']/ancestor::div[@data-testid='cellInnerDiv']",
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("display_ads_tweets")
-        element.style.display = value ? "block" : "none"
+        const value = await readStorageAsBoolean("hide_ads_tweets")
+        element.style.display = value ? "none" : "block"
       } catch (error) {}
     }
   },

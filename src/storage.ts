@@ -44,7 +44,7 @@ export const watchSettings = (callback) => {
     'display_more_button',
     'display_trends_panel',
     'display_whoToFollow_panel',
-    'display_ads_tweets',
+    'hide_ads_tweets',
     'clean_tweet_text',
     'display_messages_box',
     'display_tabHeader_in_notifications_page',
@@ -54,7 +54,7 @@ export const watchSettings = (callback) => {
     'mutted_texts',
     'display_translate_link',
     'timeline_width',
-    'display_advanced_search'
+    'display_advanced_search',
   ];
 
   settingsToWatch.forEach((setting) => {

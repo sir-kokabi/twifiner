@@ -62,6 +62,11 @@ const Features = () => {
         title="Display advanced search"    
       />
     
+      <Toggle
+        id="hide_ads_tweets"        
+        title="Hide ads in timeline"    
+      />
+    
     </div>
 
 
