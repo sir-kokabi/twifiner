@@ -542,6 +542,10 @@ const items = [
           )
         )
           return
+        const hideReposts = await readStorageAsBoolean("hide_reposts")
+        if (hideReposts && utils.evaluateXpath("//span//following-sibling::text()[.=' reposted']")){
+          return
+        }
         const value = await readStorageAsBoolean(
           "mute_tweets_containing_specific_texts"
         )
@@ -554,6 +558,18 @@ const items = [
         } else {
           element.style.display = "block"
         }
+      } catch (error) {}
+    }
+  },
+  {
+    // "hide_reposts",
+    page: "home",
+    xpath: "//div[@data-testid='cellInnerDiv']//span//following-sibling::text()[.=' reposted']/ancestor::div[@data-testid='cellInnerDiv']",
+
+    applyStyle: async (element) => {
+      try {
+        const value = await readStorageAsBoolean("hide_reposts");
+        element.style.display = value? "none": "block"      
       } catch (error) {}
     }
   },
@@ -789,7 +805,7 @@ const regexPatterns = {
   home: new RegExp(`^https:\/\/(twitter|x)\.com\/home\/?`)
 }
 function applyStyles() {
-  try {
+  try {  
     const usernameElement = document.querySelector(
       'div[data-testid="UserName"] > div > div > div:nth-child(2) span'
     )

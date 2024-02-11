@@ -32,10 +32,7 @@ const Features = () => {
         id="change_hashtags_styles"        
         title="Make hashtags pop"        
       />
-      <Toggle
-        id="display_ads_tweets"        
-        title="Display Ads"        
-      />
+     
       <Toggle
         id="replace_link_with_title"        
         title="Replace t.co links with title"
@@ -65,6 +62,11 @@ const Features = () => {
       <Toggle
         id="hide_ads_tweets"        
         title="Hide ads in timeline"    
+      />
+
+      <Toggle
+        id="hide_reposts"        
+        title="Hide reposts in timeline"    
       />
     
     </div>
