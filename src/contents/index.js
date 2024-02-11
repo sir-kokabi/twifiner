@@ -228,6 +228,11 @@ const items = [
     applyStyle: async (element) => {
       try {
         //const value = await readStorageAsBoolean("make_rtl")
+        const fontSize=await readStorageAsString("tweet_font_size");        
+        element.style.fontSize = `${fontSize}px`;
+        const lineHeight = parseInt(fontSize) *  1.5; // Adjust the multiplier as needed
+        element.style.lineHeight = `${lineHeight}px`;
+
         const text = element.innerText        
 
         const isRtl = await utils.isRTL(text)

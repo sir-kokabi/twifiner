@@ -55,7 +55,8 @@ export const watchSettings = (callback) => {
     'display_translate_link',
     'timeline_width',
     'display_advanced_search',
-    'hide_reposts'
+    'hide_reposts',
+    'tweet_font_size'
   ];
 
   settingsToWatch.forEach((setting) => {

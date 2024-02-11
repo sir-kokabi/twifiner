@@ -1,11 +1,13 @@
 import TimelineButtonGroup from "~popup/components/TimelineButtonGroup"
 import Toggle from "~popup/components/Toggle"
+import Slider from "~popup/components/Slider"
 
 const Features = () => {
   return (
     <>
     <div className="flex flex-col justify-center">
       <TimelineButtonGroup id="timeline_width" />
+      <Slider id="tweet_font_size" label="Tweet Font Size" min={12} max={24}/>
       <p className="text-sm text-black mt-6">Some following features may require a page refresh to display changes:</p>
       <Toggle id="display_trends_panel" title="Display Trends" />
       <Toggle id="display_whoToFollow_panel" title="Display Who to follow" />
