@@ -621,12 +621,22 @@ const items = [
   {
     // "tweet_datetime_as_age_in_chat",
     page: "messages",
-    xpath: "//time[@datetime]/ancestor::*[2]//preceding-sibling::div[1]",
+    xpath: "//div[@data-testid='messageEntry']/following-sibling::div[1]//span",
     applyStyle: async (element) => {
       try {
         //const value = await readStorageAsBoolean("tweet_datetime_as_age_in_chat");
-        const datetime = element.textContent
-        element.textContent = utils.getRoundedAge(datetime)
+        const datetime = element.textContent.trim()
+        
+        if (!datetime) return;  
+
+        const shortMonthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        
+        if (!shortMonthNames.some(month=>datetime.includes(month)))
+          return
+        
+        let date = datetime.split(",")[0].trim();
+        const isoDate = moment(date, "MMM D, YYYY").format('YYYY-MM-DD'); 
+        element.textContent = utils.getRoundedAge(isoDate)
       } catch (error) {}
     }
   },
