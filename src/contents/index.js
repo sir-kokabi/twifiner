@@ -449,10 +449,8 @@ const items = [
         element.style.maxWidth = width
 
         element.style.marginRight = "30px"
-
-        document.querySelector(
-          'div[aria-label="Home timeline"] > div:nth-child(3) > div > div'
-        ).style.maxWidth = "100%"
+        const innerDiv=utils.evaluateXpath('//div[@aria-label="Home timeline"]/div[last()]').snapshotItem(0);
+        innerDiv.style.maxWidth="100%"
       } catch (error) {}
     }
   },
