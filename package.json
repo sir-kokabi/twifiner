@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "plasmo dev",
     "build": "plasmo build",
-    "package": "plasmo package"
+    "package": "plasmo build && plasmo package"
   },
   "dependencies": {
     "@plasmohq/messaging": "^0.6.1",

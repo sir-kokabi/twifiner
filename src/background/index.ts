@@ -16,7 +16,7 @@ const storageDefaults = {
   hide_premium_button: "true",
   add_drafts_button: "false",
   add_scheduled_button: "false",
-  add_settings_button: "false",
+  add_settings_button: "true",
   add_analytics_button: "false",
   hide_more_button: "false",
   hide_trends_panel: "true",

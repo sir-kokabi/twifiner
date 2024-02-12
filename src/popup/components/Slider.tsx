@@ -2,7 +2,7 @@ import React, { useState } from "react"
 
 import { readStorageAsString, writeStorage } from "~storage"
 
-const Slider = ({ id, label, min, max, value = "14" }) => {
+const Slider = ({ id, label, min, max, value = "14", classNames="" }) => {
   const [inputValue, setInputValue] = useState(value)
 
   readStorageAsString(id).then((value) => {
@@ -21,7 +21,7 @@ const Slider = ({ id, label, min, max, value = "14" }) => {
   }
 
   return (
-    <div className="flex flex-col">
+    <div className={`flex flex-col ${classNames}`}>
       <div className="w-full">
       <label
         htmlFor={`slider-${id}`}

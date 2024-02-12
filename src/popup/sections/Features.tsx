@@ -8,6 +8,7 @@ const Features = () => {
       <div className="flex flex-col justify-center">
         <TimelineButtonGroup id="timeline_width" />
         <Slider
+        classNames="mt-4"
           id="tweet_font_size"
           label="Tweet Font Size"
           min={12}
