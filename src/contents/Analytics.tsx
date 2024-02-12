@@ -61,14 +61,14 @@ const AnalyticsButton = () => {
   }
 
   watchSettings(() => {
-    readStorageAsBoolean("display_analytics_button").then((value) => {
+    readStorageAsBoolean("add_analytics_button").then((value) => {
       setDisplay(value)
     })
   })
 
   const [username, setUsername] = useState("")
 
-  useEffect(() => {
+  useEffect(() => {   
     const profileLink = document.querySelector(
       'nav[aria-label] a[aria-label="Profile"]'
     )

@@ -61,7 +61,7 @@ const ScheduledButton = () => {
   }
 
   watchSettings(() => {
-    readStorageAsBoolean("display_scheduled_button").then((value) => {
+    readStorageAsBoolean("add_scheduled_button").then((value) => {
       setDisplay(value)
     })
   })

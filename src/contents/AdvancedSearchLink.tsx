@@ -1,6 +1,6 @@
 import cssText from "data-text:~contents/styles.css"
 import type { PlasmoCSConfig, PlasmoGetInlineAnchor } from "plasmo"
-import React, { useState } from "react"
+import React, { useEffect,useState } from "react"
 
 import { readStorageAsBoolean, watchSettings } from "~storage"
 
@@ -21,7 +21,13 @@ const AdvancedSearchLink = () => {
   const [display, setDisplay] = useState(true)
 
   watchSettings(() => {
-    readStorageAsBoolean("display_advanced_search").then((value) => {
+    readStorageAsBoolean("add_advanced_search").then((value) => {
+      setDisplay(value)
+    })
+  })
+
+  watchSettings(() => {
+    readStorageAsBoolean("add_advanced_search").then((value) => {
       setDisplay(value)
     })
   })

@@ -62,7 +62,7 @@ const DraftsButton = () => {
   }
 
   watchSettings(() => {
-    readStorageAsBoolean("display_drafts_button").then((value) => {
+    readStorageAsBoolean("add_drafts_button").then((value) => {
       setDisplay(value)
     })
   })

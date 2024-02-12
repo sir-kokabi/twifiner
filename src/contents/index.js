@@ -41,158 +41,160 @@ const items = [
   },
 
   {
-    // "display_logo_button",
+    // "hide_X_logo",
     page: "",
     xpath: "//header//a[@aria-label='X']",
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("display_logo_button")
-        element.style.display = value ? "flex" : "none"
+        const value = await readStorageAsBoolean("hide_X_logo")
+        element.style.display = value ? "none" : "flex"
       } catch (error) {}
     }
   },
   {
-    // "display_explore_button",
+    // "hide_explore_button",
     page: "",
     xpath: "//nav[@aria-label='Primary']//a[@aria-label='Search and explore']",
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("display_explore_button")
-        element.style.display = value ? "flex" : "none"
+        const value = await readStorageAsBoolean("hide_explore_button")
+        element.style.display = value ? "none" : "flex"
       } catch (error) {}
     }
   },
   {
-    // "display_grok_button",
+    // "hide_grok_button",
     page: "",
     xpath: "//nav[@aria-label='Primary']//a[@aria-label='Grok']",
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("display_grok_button")
-        element.style.display = value ? "flex" : "none"
+        const value = await readStorageAsBoolean("hide_grok_button")
+        element.style.display = value ? "none" : "flex"
       } catch (error) {}
     }
   },
   {
-    // "display_lists_button",
+    // "hide_lists_button",
     page: "",
     xpath: "//nav[@aria-label='Primary']//a[@aria-label='Lists']",
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("display_lists_button")
-        element.style.display = value ? "flex" : "none"
+        const value = await readStorageAsBoolean("hide_lists_button")
+        element.style.display = value ? "none" : "flex"
       } catch (error) {}
     }
   },
   {
-    // "display_bookmarks_button",
+    // "hide_bookmarks_button",
     page: "",
     xpath: "//nav[@aria-label='Primary']//a[@aria-label='Bookmarks']",
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("display_bookmarks_button")
-        element.style.display = value ? "flex" : "none"
+        const value = await readStorageAsBoolean("hide_bookmarks_button")
+        element.style.display = value ? "none" : "flex"
       } catch (error) {}
     }
   },
   {
-    // "display_communities_button",
+    // "hide_communities_button",
     page: "",
     xpath: "//nav[@aria-label='Primary']//a[@aria-label='Communities']",
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("display_communities_button")
-        element.style.display = value ? "flex" : "none"
+        const value = await readStorageAsBoolean("hide_communities_button")
+        element.style.display = value ? "none" : "flex"
       } catch (error) {}
     }
   },
   {
-    // "display_premium_button",
+    // "hide_premium_button",
     page: "",
     xpath: "//nav[@aria-label='Primary']//a[@aria-label='Premium']",
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("display_premium_button")
-        element.style.display = value ? "flex" : "none"
+        const value = await readStorageAsBoolean("hide_premium_button")
+        element.style.display = value ? "none" : "flex"
       } catch (error) {}
     }
   },
   {
-    // "display_drafts_button",
+    // "add_drafts_button",
     page: "",
     xpath: "//nav[@aria-label='Primary']//a[@aria-label='Drafts']",
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("display_drafts_button")
+        const value = await readStorageAsBoolean("add_drafts_button")
+       
         element.style.display = value ? "flex" : "none"
       } catch (error) {}
     }
   },
   {
-    // "display_scheduled_button",
+    // "add_scheduled_button",
     page: "",
-    xpath: "//nav[@aria-label='Primary']//a[@aria-label='Scheduled']",
+    xpath: "//nav[@aria-label='Primary']//a[@aria-label='scheduled']",
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("display_scheduled_button")
+        
+        const value = await readStorageAsBoolean("add_scheduled_button")
         element.style.display = value ? "flex" : "none"
       } catch (error) {}
     }
   },
   {
-    // "display_settings_button",
+    // "add_settings_button",
     page: "",
     xpath: "//nav[@aria-label='Primary']//a[@aria-label='Settings']",
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("display_settings_button")
+        const value = await readStorageAsBoolean("add_settings_button")
         element.style.display = value ? "flex" : "none"
       } catch (error) {}
     }
   },
   {
-    // "display_analytics_button",
+    // "add_analytics_button",
     page: "",
     xpath: "//nav[@aria-label='Primary']//a[@aria-label='Analytics']",
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("display_analytics_button")
+        const value = await readStorageAsBoolean("add_analytics_button")
         element.style.display = value ? "flex" : "none"
       } catch (error) {}
     }
   },
   {
-    // "display_more_button",
+    // "hide_more_button",
     page: "",
     xpath: "//div[@aria-label='More menu items']",
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("display_more_button")
-        element.style.display = value ? "flex" : "none"
+        const value = await readStorageAsBoolean("hide_more_button")
+        element.style.display = value ? "none" : "flex"
       } catch (error) {}
     }
   },
   {
-    // "display_trends_panel",
+    // "hide_trends_panel",
     page: "",
     xpath:
       "//div[@data-testid='sidebarColumn']//div[@aria-label='Timeline: Trending now']/ancestor::*[3]",
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("display_trends_panel")
-        element.style.display = value ? "flex" : "none"
+        const value = await readStorageAsBoolean("hide_trends_panel")
+        element.style.display = value ? "none" : "flex"
       } catch (error) {}
     }
   },
   {
-    // "display_whoToFollow_panel",
+    // "hide_whoToFollow_panel",
     page: "",
     xpath:
       "//div[@data-testid='sidebarColumn']//aside[@aria-label='Who to follow']/ancestor::*[2]",
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("display_whoToFollow_panel")
-        element.style.display = value ? "flex" : "none"
+        const value = await readStorageAsBoolean("hide_whoToFollow_panel")
+        element.style.display = value ? "none" : "flex"
       } catch (error) {}
     }
   },
@@ -271,66 +273,66 @@ const items = [
     }
   },
   {
-    // "display_premium_panel",
+    // "hide_premium_panel",
     page: "",
     xpath:
       "//div[@data-testid='sidebarColumn']//aside[@aria-label='Subscribe to Premium']/ancestor::*[1]",
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("display_premium_panel")
-        element.style.display = value ? "flex" : "none"
+        const value = await readStorageAsBoolean("hide_premium_panel")
+        element.style.display = value ? "none" : "flex"
       } catch (error) {}
     }
   },
   {
-    // "display_footer_panel",
+    // "hide_footer_panel",
     page: "",
     xpath:
       "//div[@data-testid='sidebarColumn']//nav[@aria-label='Footer']/ancestor::*[1]",
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("display_footer_panel")
-        element.style.display = value ? "flex" : "none"
+        const value = await readStorageAsBoolean("hide_footer_panel")
+        element.style.display = value ? "none" : "flex"
       } catch (error) {}
     }
   },
   {
-    // "display_messages_box",
+    // "hide_messages_box",
     page: "",
     xpath: "//div[@data-testid='DMDrawer']",
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("display_messages_box")
+        const value = await readStorageAsBoolean("hide_messages_box")
         if (value) {
+          element.style.display = "none"
+        } else {
           element.style.display = "flex"
           element.style.transform = ""
-        } else {
-          element.style.display = "none"
         }
       } catch (error) {}
     }
   },
   {
-    // "display_usernames_in_timeline",
+    // "hide_usernames_in_timeline",
     page: "",
     xpath:
       "//div[@data-testid='User-Name']//*[starts-with(text(),'@')]/ancestor::*[3]",
     applyStyle: async (element) => {
       try {
         const value = await readStorageAsBoolean(
-          "display_usernames_in_timeline"
+          "hide_usernames_in_timeline"
         )
-        element.style.display = value ? "flex" : "none"
+        element.style.display = value ? "none" : "flex"
       } catch (error) {}
     }
   },
   {
-    // "change_hashtags_styles",
+    // "make_hashtags_pop",
     page: "",
     xpath: "//a[starts-with(text(),'#')]",
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("change_hashtags_styles")
+        const value = await readStorageAsBoolean("make_hashtags_pop")
         if (!value) return;
 
         const activeTheme = utils.getCurrentTheme();
@@ -457,16 +459,16 @@ const items = [
 
   // https://twitter.com/notifications
   {
-    // "display_tabHeader_in_notifications_page",
+    // "hide_tabHeader_in_notifications_page",
     page: "notifications",
     xpath:
       "//div[@aria-label='Home timeline']//nav[@aria-label='Notifications timelines']/ancestor::*[1]",
     applyStyle: async (element) => {
       try {
         const value = await readStorageAsBoolean(
-          "display_tabHeader_in_notifications_page"
+          "hide_tabHeader_in_notifications_page"
         )
-        element.style.display = value ? "flex" : "none"
+        element.style.display = value ? "none" : "flex"
       } catch (error) {}
     }
   },
@@ -487,14 +489,14 @@ const items = [
   },
   // https://twitter.com/i/bookmarks
   {
-    // "display_usernames",
+    // "hide_usernames",
     page: "bookmarks",
     xpath:
       "//div[@aria-label='Home timeline']//span[starts-with(text(),'@')]/ancestor::*[2]",
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("display_usernames")
-        element.style.display = value ? "block" : "none"
+        const value = await readStorageAsBoolean("hide_usernames")
+        element.style.display = value ? "none" : "block"
       } catch (error) {}
     }
   },
@@ -534,6 +536,24 @@ const items = [
     }
   },
   //https://twitter.com/home
+
+  {
+    // "hide_reposts",
+    page: "home",
+    xpath: "//div[@data-testid='cellInnerDiv']//span//following-sibling::text()[.=' reposted']/ancestor::div[@data-testid='cellInnerDiv']",
+
+    applyStyle: async (element) => {
+      try {
+        const value = await readStorageAsBoolean("hide_reposts");
+        if (value){
+          element.classList.add("twifiner-hide-repost")
+
+        }else{
+          element.classList.remove("twifiner-hide-repost")
+        }
+      } catch (error) {}
+    }
+  },
   {
     // "mute_tweets_containing_specific_texts",
     page: "home",
@@ -547,8 +567,9 @@ const items = [
           )
         )
           return
-        const hideReposts = await readStorageAsBoolean("hide_reposts")
-        if (hideReposts && utils.evaluateXpath("//span//following-sibling::text()[.=' reposted']")){
+
+        if (element.classList.contains("twifiner-hide-repost")){
+          element.style.display = "none"
           return
         }
         const value = await readStorageAsBoolean(
@@ -566,18 +587,7 @@ const items = [
       } catch (error) {}
     }
   },
-  {
-    // "hide_reposts",
-    page: "home",
-    xpath: "//div[@data-testid='cellInnerDiv']//span//following-sibling::text()[.=' reposted']/ancestor::div[@data-testid='cellInnerDiv']",
-
-    applyStyle: async (element) => {
-      try {
-        const value = await readStorageAsBoolean("hide_reposts");
-        element.style.display = value? "none": "block"      
-      } catch (error) {}
-    }
-  },
+  
   //https://twitter.com/[username]/messages
   {
     // "change_tweet_datetime_style_in_messages_page",
@@ -600,26 +610,26 @@ const items = [
     }
   },
   {
-    // "display_usernames_in_messages_page",
+    // "hide_usernames_in_messages_page",
     page: "messages",
     xpath: "//span[starts-with(text(),'@')]/ancestor::*[3]",
     applyStyle: async (element) => {
       try {
         const value = await readStorageAsBoolean(
-          "display_usernames_in_messages_page"
+          "hide_usernames_in_messages_page"
         )
-        element.style.display = value ? "flex" : "none"
+        element.style.display = value ? "none" : "flex"
       } catch (error) {}
     }
   },
   {
-    // "display_dot_before_dates",
+    // "hide_dot_before_dates",
     page: "messages",
     xpath: "//time[@datetime]/ancestor::*[2]//preceding-sibling::div[1]",
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("display_dot_before_dates")
-        element.style.display = value ? "block" : "none"
+        const value = await readStorageAsBoolean("hide_dot_before_dates")
+        element.style.display = value ? "none" : "block"
       } catch (error) {}
     }
   },
@@ -647,32 +657,32 @@ const items = [
   },
   // https://twitter.com/[username]
   {
-    // "display_gallery",
+    // "hide_gallery",
     page: "profile",
     xpath:
       "//div[@data-testid='sidebarColumn']//div[@aria-label='Image']/ancestor::*[9]",
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("display_gallery")
-        element.style.display = value ? "flex" : "none"
+        const value = await readStorageAsBoolean("hide_gallery")
+        element.style.display = value ? "none" : "flex"
       } catch (error) {}
     }
   },
   {
-    // "display_highlights_tab",
+    // "hide_highlights_tab",
     page: "profile",
     xpath:
       "//nav[@aria-label='Profile timelines']//span[contains(text(), 'Highlights')]/ancestor::*[4]",
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("display_highlights_tab")
+        const value = await readStorageAsBoolean("hide_highlights_tab")
         if (
           document.querySelector(
             'div[aria-label="Provides details about verified accounts."]'
           )
         )
           return
-        element.style.display = value ? "flex" : "none"
+        element.style.display = value ? "none" : "flex"
       } catch (error) {}
     }
   },
@@ -713,62 +723,62 @@ const items = [
   },
   // https://twitter.com/search?q=[query]
   {
-    // "display_usernames_in_search1",
+    // "hide_usernames_in_search1",
     page: "search",
     xpath:
       "//div[@data-testid='User-Name']//span[starts-with(text(),'@')]/ancestor::*[3]",
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("display_usernames_in_search1")
-        element.style.display = value ? "flex" : "none"
+        const value = await readStorageAsBoolean("hide_usernames_in_search1")
+        element.style.display = value ? "none" : "flex"
       } catch (error) {}
     }
   },
   {
-    // "display_usernames_in_search2",
+    // "hide_usernames_in_search2",
     page: "search",
     xpath:
       "//div[@data-testid='UserCell']//span[starts-with(text(),'@')]/ancestor::*[5]",
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("display_usernames_in_search2")
-        element.style.display = value ? "flex" : "none"
+        const value = await readStorageAsBoolean("hide_usernames_in_search2")
+        element.style.display = value ? "none" : "flex"
       } catch (error) {}
     }
   },
   // https://twitter.com/[username]/status/[number]
   {
-    // "display_relevant_people",
+    // "hide_relevant_people",
     page: "tweet",
     xpath:
       "//div[@data-testid='sidebarColumn']//aside[@aria-label='Relevant people']/ancestor::*[1]",
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("display_relevant_people")
-        element.style.display = value ? "flex" : "none"
+        const value = await readStorageAsBoolean("hide_relevant_people")
+        element.style.display = value ? "none" : "flex"
       } catch (error) {}
     }
   },
   {
-    // "display_translate_post",
+    // "hide_translate_link",
     page: "tweet",
     xpath: "//span[contains(text(), 'Translate post')]/ancestor::*[1]",
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("display_translate_link")
-        element.style.display = value ? "block" : "none"
+        const value = await readStorageAsBoolean("hide_translate_link")
+        element.style.display = value ? "none" : "block"
       } catch (error) {}
     }
   },
   {
-    // "display_discover_more",
+    // "hide_discover_more",
     page: "tweet",
     xpath:
       "//span[text()='Discover more']/ancestor::*[6]//following-sibling::node()",
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("display_discover_more")
-        element.style.display = value ? "block" : "none"
+        const value = await readStorageAsBoolean("hide_discover_more")
+        element.style.display = value ? "none" : "block"
       } catch (error) {}
     }
   },

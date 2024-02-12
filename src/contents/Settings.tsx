@@ -61,7 +61,7 @@ const SettingsButton = () => {
   }
 
   watchSettings(() => {
-    readStorageAsBoolean("display_settings_button").then((value) => {
+    readStorageAsBoolean("add_settings_button").then((value) => {
       setDisplay(value)
     })
   })
