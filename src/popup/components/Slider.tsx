@@ -15,6 +15,11 @@ const Slider = ({ id, label, min, max, value = "14" }) => {
     writeStorage(id, value)
   }
 
+  const handleResetValue = () => {    
+    setInputValue("15")
+    writeStorage(id, "15")
+  }
+
   return (
     <div className="flex flex-col">
       <div className="w-full">
@@ -30,6 +35,7 @@ const Slider = ({ id, label, min, max, value = "14" }) => {
         max={max}
         value={inputValue}
         onChange={handleChange}
+        onDoubleClick={handleResetValue}
         step="1"
         id={`slider-${id}`}
       />

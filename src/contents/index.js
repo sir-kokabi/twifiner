@@ -1,5 +1,7 @@
 import "./styles.css"
+
 import moment from "moment"
+
 import {
   readStorageAsBoolean,
   readStorageAsString,
@@ -28,9 +30,9 @@ const items = [
     xpath: '//div[@aria-label="Account menu"]/ancestor::div[2]',
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("move_account_menu_to_top");
-        if (!value) return;
-        if (element.classList.contains("twifiner-account-menu")) return;
+        const value = await readStorageAsBoolean("move_account_menu_to_top")
+        if (!value) return
+        if (element.classList.contains("twifiner-account-menu")) return
         const container = element.parentElement
         container.style.justifyContent = "flex-start"
         container.removeChild(element)
@@ -124,7 +126,7 @@ const items = [
     applyStyle: async (element) => {
       try {
         const value = await readStorageAsBoolean("add_drafts_button")
-       
+
         element.style.display = value ? "flex" : "none"
       } catch (error) {}
     }
@@ -135,7 +137,6 @@ const items = [
     xpath: "//nav[@aria-label='Primary']//a[@aria-label='scheduled']",
     applyStyle: async (element) => {
       try {
-        
         const value = await readStorageAsBoolean("add_scheduled_button")
         element.style.display = value ? "flex" : "none"
       } catch (error) {}
@@ -216,8 +217,8 @@ const items = [
     applyStyle: async (element) => {
       try {
         const value = await readStorageAsBoolean("clean_tweet_text")
-        if (!value) return;
-        const text = element.textContent;        
+        if (!value) return
+        const text = element.textContent
         const normalizedText = utils.cleanupText(text)
         element.textContent = normalizedText
       } catch (error) {}
@@ -230,16 +231,16 @@ const items = [
     applyStyle: async (element) => {
       try {
         //const value = await readStorageAsBoolean("make_rtl")
-        const fontSize=await readStorageAsString("tweet_font_size");        
-        element.style.fontSize = `${fontSize}px`;
-        const lineHeight = parseInt(fontSize) *  1.5; // Adjust the multiplier as needed
-        element.style.lineHeight = `${lineHeight}px`;
+        const fontSize = await readStorageAsString("tweet_font_size")
+        element.style.fontSize = `${fontSize}px`
+        const lineHeight = parseInt(fontSize) * 1.5 // Adjust the multiplier as needed
+        element.style.lineHeight = `${lineHeight}px`
 
-        const text = element.innerText        
+        const text = element.innerText
 
         const isRtl = await utils.isRTL(text)
         if (isRtl) {
-          element.style.fontFamily = "Vazirmatn";
+          element.style.fontFamily = "Vazirmatn"
           element.style.direction = "rtl"
           element.style.textAlign = "right"
         } else {
@@ -255,8 +256,8 @@ const items = [
     xpath: '//div[@data-testid="cellInnerDiv"]//a[@target]',
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("replace_link_with_title");
-        if (!value) return;
+        const value = await readStorageAsBoolean("replace_link_with_title")
+        if (!value) return
         element.style.textDecoration = "none"
 
         const url = element.href
@@ -319,9 +320,7 @@ const items = [
       "//div[@data-testid='User-Name']//*[starts-with(text(),'@')]/ancestor::*[3]",
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean(
-          "hide_usernames_in_timeline"
-        )
+        const value = await readStorageAsBoolean("hide_usernames_in_timeline")
         element.style.display = value ? "none" : "flex"
       } catch (error) {}
     }
@@ -333,23 +332,22 @@ const items = [
     applyStyle: async (element) => {
       try {
         const value = await readStorageAsBoolean("make_hashtags_pop")
-        if (!value) return;
+        if (!value) return
 
-        const activeTheme = utils.getCurrentTheme();
+        const activeTheme = utils.getCurrentTheme()
         let bgColor = "#f3f4f6"
         let color = "#1f2937"
 
-        if (activeTheme==="dim"){
+        if (activeTheme === "dim") {
           bgColor = "#2c3640"
           color = "#ffffff"
-        } else if(activeTheme==="dark"){
+        } else if (activeTheme === "dark") {
           bgColor = "#181818"
           color = "#ffffff"
-        } else{
+        } else {
           bgColor = "#f3f4f6"
-          color = "#1f2937"          
+          color = "#1f2937"
         }
-
 
         element.textContent = element.textContent.replace("#", "")
         element.style.cssText = `
@@ -449,8 +447,10 @@ const items = [
         element.style.maxWidth = width
 
         element.style.marginRight = "30px"
-        const innerDiv=utils.evaluateXpath('//div[@aria-label="Home timeline"]/div[last()]').snapshotItem(0);
-        innerDiv.style.maxWidth="100%"
+        const innerDiv = utils
+          .evaluateXpath('//div[@aria-label="Home timeline"]/div[last()]')
+          .snapshotItem(0)
+        innerDiv.style.maxWidth = "100%"
       } catch (error) {}
     }
   },
@@ -506,9 +506,7 @@ const items = [
       '//div[@aria-label="Timeline: Followers"]//div[starts-with(@aria-label,"Following")]/ancestor::div[@data-testid="cellInnerDiv"]',
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean(
-          "highlight_mutuals_friends"
-        )
+        const value = await readStorageAsBoolean("highlight_mutuals_friends")
 
         element.style.backgroundColor = value
           ? utils.bgColorForCurrentTheme()
@@ -524,9 +522,23 @@ const items = [
       '//div[@aria-label="Timeline: Following"]//span[contains(text(), "Follows you")]/ancestor::div[@data-testid="cellInnerDiv"]',
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean(
-          "highlight_mutuals_friends"
-        )
+        const value = await readStorageAsBoolean("highlight_mutuals_friends")
+        element.style.backgroundColor = value
+          ? utils.bgColorForCurrentTheme()
+          : ""
+      } catch (error) {}
+    }
+  },
+  // https://twitter.com/[username]/verified_followers
+  {
+    // "highlight_mutuals_friends",
+    page: "verified_followers",
+    xpath:
+      '//div[@aria-label="Timeline: Verified Followers"]//div[starts-with(@aria-label,"Following")]/ancestor::div[@data-testid="cellInnerDiv"]',
+    applyStyle: async (element) => {
+      try {
+        const value = await readStorageAsBoolean("highlight_mutuals_friends")
+
         element.style.backgroundColor = value
           ? utils.bgColorForCurrentTheme()
           : ""
@@ -538,15 +550,15 @@ const items = [
   {
     // "hide_reposts",
     page: "home",
-    xpath: "//div[@data-testid='cellInnerDiv']//span//following-sibling::text()[.=' reposted']/ancestor::div[@data-testid='cellInnerDiv']",
+    xpath:
+      "//div[@data-testid='cellInnerDiv']//span//following-sibling::text()[.=' reposted']/ancestor::div[@data-testid='cellInnerDiv']",
 
     applyStyle: async (element) => {
       try {
-        const value = await readStorageAsBoolean("hide_reposts");
-        if (value){
+        const value = await readStorageAsBoolean("hide_reposts")
+        if (value) {
           element.classList.add("twifiner-hide-repost")
-
-        }else{
+        } else {
           element.classList.remove("twifiner-hide-repost")
         }
       } catch (error) {}
@@ -566,7 +578,7 @@ const items = [
         )
           return
 
-        if (element.classList.contains("twifiner-hide-repost")){
+        if (element.classList.contains("twifiner-hide-repost")) {
           element.style.display = "none"
           return
         }
@@ -585,7 +597,7 @@ const items = [
       } catch (error) {}
     }
   },
-  
+
   //https://twitter.com/[username]/messages
   {
     // "change_tweet_datetime_style_in_messages_page",
@@ -639,16 +651,28 @@ const items = [
       try {
         //const value = await readStorageAsBoolean("tweet_datetime_as_age_in_chat");
         const datetime = element.textContent.trim()
-        
-        if (!datetime) return;  
 
-        const shortMonthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-        
-        if (!shortMonthNames.some(month=>datetime.includes(month)))
-          return
-        
-        let date = datetime.split(",")[0].trim();
-        const isoDate = moment(date, "MMM D, YYYY").format('YYYY-MM-DD'); 
+        if (!datetime) return
+
+        const shortMonthNames = [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec"
+        ]
+
+        if (!shortMonthNames.some((month) => datetime.includes(month))) return
+
+        let date = datetime.split(",")[0].trim()
+        const isoDate = moment(date, "MMM D, YYYY").format("YYYY-MM-DD")
         element.textContent = utils.getRoundedAge(isoDate)
       } catch (error) {}
     }
@@ -701,7 +725,7 @@ const items = [
           return
 
         const monthYear = element.textContent.replace("Joined ", "").trim() // June 2012
-        const isoDate = moment(monthYear, "MMMM YYYY").format('YYYY-MM-DD');     
+        const isoDate = moment(monthYear, "MMMM YYYY").format("YYYY-MM-DD")
         element.textContent = "Joined " + utils.getRoundedAge(isoDate) + " ago"
       } catch (error) {}
     }
@@ -828,7 +852,7 @@ const regexPatterns = {
   home: new RegExp(`^https:\/\/(twitter|x)\.com\/home\/?`)
 }
 function applyStyles() {
-  try {  
+  try {
     const usernameElement = document.querySelector(
       'div[data-testid="UserName"] > div > div > div:nth-child(2) span'
     )
