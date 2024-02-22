@@ -13,15 +13,14 @@ export const config = {
   matches: ["https://twitter.com/*", "https://x.com/*"]
 }
 
-
-if (!document.getElementById('twifiner-font-vazirmatn')) {
-  const link = document.createElement("link");
-  link.id = "twifiner-font-vazirmatn";
-  link.rel = "stylesheet";
-  link.href = "https://fonts.googleapis.com/css2?family=Vazirmatn:wght@200..900&display=swap";
-  document.head.appendChild(link);
+if (!document.getElementById("twifiner-font-vazirmatn")) {
+  const link = document.createElement("link")
+  link.id = "twifiner-font-vazirmatn"
+  link.rel = "stylesheet"
+  link.href =
+    "https://fonts.googleapis.com/css2?family=Vazirmatn:wght@200..900&display=swap"
+  document.head.appendChild(link)
 }
-
 
 const items = [
   //global
@@ -241,6 +240,9 @@ const items = [
     applyStyle: async (element) => {
       try {
         //const value = await readStorageAsBoolean("make_rtl")
+        const changeFont = await readStorageAsBoolean(
+          "change_persian_tweets_font"
+        )
         const fontSize = await readStorageAsString("tweet_font_size")
         element.style.fontSize = `${fontSize}px`
         const lineHeight = parseInt(fontSize) * 1.5 // Adjust the multiplier as needed
@@ -250,7 +252,7 @@ const items = [
 
         const isRtl = await utils.isRTL(text)
         if (isRtl) {
-          element.style.fontFamily = "Vazirmatn"
+          if (changeFont) element.style.fontFamily = "Vazirmatn"
           element.style.direction = "rtl"
           element.style.textAlign = "right"
         } else {
@@ -611,11 +613,12 @@ const items = [
   {
     // "hide_inline_prompts",
     page: "home",
-    xpath: '//div[@data-testid="inlinePrompt"]/ancestor::div[@data-testid="cellInnerDiv"]',
+    xpath:
+      '//div[@data-testid="inlinePrompt"]/ancestor::div[@data-testid="cellInnerDiv"]',
 
     applyStyle: async (element) => {
       try {
-        element.style.display = "none";
+        element.style.display = "none"
       } catch (error) {}
     }
   },

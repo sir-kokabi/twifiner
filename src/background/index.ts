@@ -57,7 +57,8 @@ const storageDefaults = {
   display_tooltip_dates_as_shamsi: "true",
   add_advanced_search:"true",
   hide_reposts:"false",
-  tweet_font_size:"15"
+  tweet_font_size:"15",
+  change_persian_tweets_font:"true"
 }
 
 const storageItems = Object.keys(storageDefaults)

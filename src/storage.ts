@@ -56,7 +56,8 @@ export const watchSettings = (callback) => {
     'is_label_shown',
     'mutted_texts',
     'timeline_width',
-    'tweet_font_size'
+    'tweet_font_size',
+    'change_persian_tweets_font'
   ];
 
   settingsToWatch.forEach((setting) => {
