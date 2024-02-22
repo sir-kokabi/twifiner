@@ -13,6 +13,16 @@ export const config = {
   matches: ["https://twitter.com/*", "https://x.com/*"]
 }
 
+
+if (!document.getElementById('twifiner-font-vazirmatn')) {
+  const link = document.createElement("link");
+  link.id = "twifiner-font-vazirmatn";
+  link.rel = "stylesheet";
+  link.href = "https://fonts.googleapis.com/css2?family=Vazirmatn:wght@200..900&display=swap";
+  document.head.appendChild(link);
+}
+
+
 const items = [
   //global
   {
@@ -604,7 +614,7 @@ const items = [
     xpath: '//div[@data-testid="inlinePrompt"]/ancestor::div[@data-testid="cellInnerDiv"]',
 
     applyStyle: async (element) => {
-      try {        
+      try {
         element.style.display = "none";
       } catch (error) {}
     }
