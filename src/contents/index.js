@@ -231,22 +231,84 @@ const items = [
     applyStyle: async (element) => {
       try {
         const justify = await readStorageAsBoolean("justify_tweet_text")
-        if (!justify) return        
-        element.style.textAlign="justify";
+        if (!justify) return
+        element.style.textAlign = "justify"
       } catch (error) {}
     }
   },
   {
-    // "Right to left layout for RTL languages",
+    // "Align Persian tweets right-to-left",
     page: "",
     xpath: "//div[@data-testid='tweetText']",
     applyStyle: async (element) => {
       try {
-        //const value = await readStorageAsBoolean("make_rtl")
         const fontSize = await readStorageAsString("tweet_font_size")
-        const changeFont = await readStorageAsBoolean("change_persian_tweets_font")
+        const changeFont = await readStorageAsBoolean(
+          "change_persian_tweets_font"
+        )
+        const justifyText = await readStorageAsBoolean("justify_tweet_text")
         element.style.fontSize = `${fontSize}px`
-        const lineHeight = parseInt(fontSize) * 1.5 // Adjust the multiplier as needed
+        const lineHeight = parseInt(fontSize) * 1.5
+        element.style.lineHeight = `${lineHeight}px`
+
+        const text = element.innerText
+
+        const isRtl = await utils.isRTL(text)
+        console.log(isRtl)
+        if (isRtl) {
+          if (changeFont) element.style.fontFamily = "Vazirmatn"
+          element.style.direction = "rtl"
+          element.style.textAlign = justifyText ? "justify" : "right"
+        } else {
+          element.style.direction = "ltr"
+          element.style.textAlign = justifyText ? "justify" : "left"
+        }
+      } catch (error) {}
+    }
+  },
+  {
+    // "Align Persian messages right-to-left",
+    page: "",
+    xpath: '//div[@data-testid="messageEntry"]//div[@data-testid="tweetText"]',
+    applyStyle: async (element) => {
+      try {
+        const fontSize = await readStorageAsString("tweet_font_size")
+        const changeFont = await readStorageAsBoolean(
+          "change_persian_tweets_font"
+        )
+        const justifyText = await readStorageAsBoolean("justify_tweet_text")
+        element.style.fontSize = `${fontSize}px`
+        const lineHeight = parseInt(fontSize) * 1.5
+        element.style.lineHeight = `${lineHeight}px`
+
+        const text = element.innerText
+
+        const isRtl = await utils.isRTL(text)
+        console.log(isRtl)
+        if (isRtl) {
+          if (changeFont) element.style.fontFamily = "Vazirmatn"
+          element.style.direction = "rtl"
+          element.style.textAlign = justifyText ? "justify" : "right"
+        } else {
+          element.style.direction = "ltr"
+          element.style.textAlign = justifyText ? "justify" : "left"
+        }
+      } catch (error) {}
+    }
+  },
+  {
+    // "Align Persian image description right-to-left",
+    page: "",
+    xpath: '//span[text()="Image description"]/ancestor::div[2]//div//div',
+    applyStyle: async (element) => {
+      try {
+        const fontSize = await readStorageAsString("tweet_font_size")
+        const changeFont = await readStorageAsBoolean(
+          "change_persian_tweets_font"
+        )
+        const justifyText = await readStorageAsBoolean("justify_tweet_text")
+        element.style.fontSize = `${fontSize}px`
+        const lineHeight = parseInt(fontSize) * 1.5
         element.style.lineHeight = `${lineHeight}px`
 
         const text = element.innerText
@@ -254,9 +316,11 @@ const items = [
         const isRtl = await utils.isRTL(text)
         if (isRtl) {
           if (changeFont) element.style.fontFamily = "Vazirmatn"
-          element.style.direction = "rtl"    
+          element.style.direction = "rtl"
+          element.style.textAlign = justifyText ? "justify" : "right"
         } else {
-          element.style.direction = "ltr"   
+          element.style.direction = "ltr"
+          element.style.textAlign = justifyText ? "justify" : "left"
         }
       } catch (error) {}
     }
@@ -612,11 +676,12 @@ const items = [
   {
     // "hide_inline_prompts",
     page: "home",
-    xpath: '//div[@data-testid="inlinePrompt"]/ancestor::div[@data-testid="cellInnerDiv"]',
+    xpath:
+      '//div[@data-testid="inlinePrompt"]/ancestor::div[@data-testid="cellInnerDiv"]',
 
     applyStyle: async (element) => {
       try {
-        element.style.display = "none";
+        element.style.display = "none"
       } catch (error) {}
     }
   },
