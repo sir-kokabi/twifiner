@@ -52,7 +52,9 @@ const Features = () => {
         />     
 
         <Toggle id="clean_tweet_text" title="Clean persian tweets" />
-        <Toggle id="change_persian_tweets_font" title="Use Vazirmatn for persian tweets" />
+        <Toggle id="justify_tweet_text" title="Justify tweet text" />
+        
+        {/* <Toggle id="change_persian_tweets_font" title="Use Vazirmatn for persian tweets" /> */}
       </div>
     </>
   )

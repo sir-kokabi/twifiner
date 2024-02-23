@@ -58,7 +58,8 @@ const storageDefaults = {
   add_advanced_search:"true",
   hide_reposts:"false",
   tweet_font_size:"15",
-  change_persian_tweets_font:"true"
+  change_persian_tweets_font:"false",
+  justify_tweet_text: "false"
 }
 
 const storageItems = Object.keys(storageDefaults)
