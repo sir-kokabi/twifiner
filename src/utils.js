@@ -236,6 +236,22 @@ function formatAllDates(datetime) {
   return [fotmattedGeorgian, formattedShamsi, formattedGhamari, time];
 }
 
+function getSimplifiedVersion () {
+  const version = chrome.runtime.getManifest().version
+  
+  let parts = version.split('.');
+
+  while (parts.length > 1 && parts[parts.length - 1] === '0') {
+      parts.pop();
+  }
+
+  if (parts.length > 1 && parts[parts.length - 1] === '0') {
+      parts.pop();
+  }
+
+  return parts.join('.');
+};
+
 export {
   getRoundedAge,
   isPersian,
@@ -250,5 +266,6 @@ export {
   evaluateXpath,
   fetchText,
   bgColorForCurrentTheme,
-  getCurrentTheme
+  getCurrentTheme,
+  getSimplifiedVersion
 }
