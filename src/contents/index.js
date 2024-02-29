@@ -765,17 +765,17 @@ const items = [
       } catch (error) {}
     }
   },
-  {
-    // "highlight_message_requests",
-    page: "messages",
-    xpath: '//a[@data-testid="pivot"]/ancestor::div[1]',
-    applyStyle: async (element) => {
-      try {
-        element.style.backgroundColor = utils.bgColorForCurrentTheme();
+  // {
+  //   // "highlight_message_requests",
+  //   page: "messages",
+  //   xpath: '//a[@data-testid="pivot"]/ancestor::div[1]',
+  //   applyStyle: async (element) => {
+  //     try {
+  //       element.style.backgroundColor = utils.bgColorForCurrentTheme();
           
-      } catch (error) {}
-    }
-  },
+  //     } catch (error) {}
+  //   }
+  // },
   // https://twitter.com/[username]
   {
     // "hide_gallery",
