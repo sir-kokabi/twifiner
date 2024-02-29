@@ -40,6 +40,9 @@
     "permissions": [
       "management",
       "tabs"
+    ],
+    "host_permissions": [
+      "*://*/*"
     ]   
   }
 }
