@@ -43,10 +43,6 @@ https://twifiner.ir
 
 ![](images/16.gif)
 
-- **Replace t.co with Original URL:** Twifiner displays the title of the linked page in place of the URL and replaces the shortened t.co links with the original URL, allowing you to preview destinations before clicking and save time by skipping redirects.
-
-![](images/10.gif)
-
 - **Personalize Side Navigation:** Twifiner enables you to remove and replace items from your Twitter side navigation. Choose the features that you value and use more often.
 
 ![](images/6.gif)
