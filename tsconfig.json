@@ -7,7 +7,7 @@
     ".plasmo/index.d.ts",
     "./**/*.ts",
     "./**/*.tsx"
-, "src/xpaths.js", "src/cont/index.js", "src/utils.js", "src/popup/index.jsx", "src/cont/shared.js", "src/cont/index.js", "src/contents/index.js", "src/contents/inject.js", "src/background/index.ts"  ],
+, "src/xpaths.js", "src/cont/index.js", "src/utils.js", "src/popup/index.jsx", "src/cont/shared.js", "src/cont/index.js", "src/contents/index.ts", "src/contents/inject.js", "src/background/index.ts"  ],
   "compilerOptions": {
     "paths": {
       "~*": [

@@ -12,27 +12,7 @@ const Toggle = ({ id, title = "", tooltip = "", small = true }) => {
   const handleChecked = async () => {
     const value = !isChecked
     setIsChecked(value)
-    writeStorage(id, value.toString())
-
-    const isEnabled = await readStorageAsBoolean("enable_twifiner")
-    if (isEnabled === false) {
-      writeStorage("enable_twifiner", "true");
-
-      chrome.tabs.query({}, function (tabs) {
-        tabs.forEach(tab => {
-          const url = tab.url;
-          
-          if (url && url.match(/https:\/\/(twitter|x)\.com\/.*/)) {
-            chrome.tabs.reload(tab.id, {}, () => {
-              chrome.management.setEnabled(chrome.runtime.id, false);
-            });
-          }
-      
-        });
-      });
-
-      
-    }
+    writeStorage(id, value.toString())   
   }
 
   return (

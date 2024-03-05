@@ -36,11 +36,7 @@
     "prettier": "3.2.4",
     "typescript": "5.3.3"
   },
-  "manifest": {
-    "permissions": [
-      "management",
-      "tabs"
-    ],
+  "manifest": {  
     "host_permissions": [
       "*://*/*"
     ]

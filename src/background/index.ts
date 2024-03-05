@@ -72,28 +72,7 @@ chrome.runtime.onInstalled.addListener(async (details) => {
       if (!value) {
         writeStorage(key, storageDefaults[key])
         await new Promise((resolve) => setTimeout(resolve, 50))
-
-        // Reload all tabs related to Twitter
-        chrome.tabs.query({}, function (tabs) {
-          tabs.forEach((tab) => {
-            const url = tab.url
-            if (url && url.match(/https:\/\/(twitter|x)\.com\/.*/)) {
-              chrome.tabs.reload(tab.id)
-            }
-          })
-        })
       }
     })
   )
-})
-
-chrome.management.onEnabled.addListener(() => {
-  chrome.tabs.query({}, function (tabs) {
-    tabs.forEach((tab) => {
-      const url = tab.url
-      if (url && url.match(/https:\/\/(twitter|x)\.com\/.*/)) {
-        chrome.tabs.reload(tab.id)
-      }
-    })
-  })
 })

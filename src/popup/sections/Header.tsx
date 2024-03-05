@@ -20,10 +20,7 @@ const Header = () => {
             </span>
           </div>
         </div>
-      </a>
-      <div>
-        <Toggle id="enable_twifiner" tooltip="Enable / Disable Extension" small={false}/>
-      </div>
+      </a>     
     </div>
   )
 }
