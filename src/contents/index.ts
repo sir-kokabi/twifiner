@@ -324,7 +324,7 @@ const items = [
         }
       } catch (error) {}
     }
-  },  
+  },
   {
     // "hide_premium_panel",
     page: "",
@@ -749,11 +749,24 @@ const items = [
   //   applyStyle: async (element) => {
   //     try {
   //       element.style.backgroundColor = utils.bgColorForCurrentTheme();
-          
+
   //     } catch (error) {}
   //   }
   // },
   // https://twitter.com/[username]
+  {
+    // "hide_reposts",
+    page: "profile",
+    xpath:
+      "//div[@data-testid='cellInnerDiv']//span//following-sibling::text()[.=' reposted']/ancestor::div[@data-testid='cellInnerDiv']",
+
+    applyStyle: async (element) => {
+      try {
+        const value = await readStorageAsBoolean("hide_reposts")
+        element.style.display = value ? "none" : "block"
+      } catch (error) {}
+    }
+  },
   {
     // "hide_gallery",
     page: "profile",
