@@ -5,8 +5,6 @@ import persianRex from "persian-rex"
 import rtl from "rtl-detect"
 import Virastar from "virastar"
 
-import { sendToBackground } from "@plasmohq/messaging"
-
 import { readStorageAsList } from "./storage"
 
 var virastar = new Virastar({ cleanup_begin_and_end: false })
@@ -98,68 +96,6 @@ async function hasMuttedText(tweetText) {
   return mutedTexts.some((text) => {
     return wholeWordSearch(tweetText, text)
   })
-}
-
-async function getFinalUrl(url) {
-  try {
-    const finalUrl = await fetchUrl(url)
-
-    return finalUrl
-  } catch (error) {
-    return undefined
-  }
-}
-
-const parser = new DOMParser()
-
-async function getTitle(url) {
-  try {
-    const text = await fetchText(url)
-
-    const doc = parser.parseFromString(text, "text/html")
-    const title = doc.querySelector("title").textContent
-    const h1Tags = Array.from(doc.querySelectorAll("h1"))
-    let heading = h1Tags.find((h1) => title.includes(h1.textContent))
-    heading = heading ? heading.textContent : title
-    return heading
-  } catch (error) {
-    return undefined
-  }
-}
-
-async function getFavIcon(url) {
-  try {
-    const finalUrl = await getFinalUrl(url)
-    const favicon = await fetchFavIcon(finalUrl)
-    return favicon
-  } catch (error) {
-    return undefined
-  }
-}
-
-async function fetchUrl(url) {
-  const res = await sendToBackground({
-    name: "fetchUrl",
-    body: url
-  })
-
-  return res
-}
-async function fetchText(url) {
-  const res = await sendToBackground({
-    name: "fetchText",
-    body: url
-  })
-
-  return res
-}
-async function fetchFavIcon(url) {
-  const res = await sendToBackground({
-    name: "fetchFavIcon",
-    body: url
-  })
-
-  return res
 }
 
 function evaluateXpath(xpath) {
@@ -259,12 +195,8 @@ export {
   muteRegexPattern,
   hasMuttedText,
   isRTL,
-  getFinalUrl,
-  getTitle,
-  getFavIcon,
   formatAllDates,
   evaluateXpath,
-  fetchText,
   bgColorForCurrentTheme,
   getCurrentTheme,
   getSimplifiedVersion

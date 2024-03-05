@@ -1,5 +1,3 @@
-import "@plasmohq/messaging/background"
-
 import {
   readStorageAsString,
   writeStorage
@@ -40,7 +38,6 @@ const storageDefaults = {
   mute_tweets_containing_specific_texts: "true",
   mutted_texts: "",
   make_rtl: "true",
-  replace_link_with_title: "true",
   timeline_width: "normal",
   move_account_menu_to_top: "true",
   hide_tabHeader_in_notifications_page: "true",

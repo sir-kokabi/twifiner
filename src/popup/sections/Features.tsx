@@ -27,11 +27,7 @@ const Features = () => {
         <Toggle
           id="hide_tabHeader_in_notifications_page"
           title="Hide notification tab header"
-        />
-        <Toggle
-          id="replace_link_with_title"
-          title="Replace t.co links with title"
-        />
+        />        
         <Toggle id="make_hashtags_pop" title="Make hashtags pop" />
 
         <Toggle

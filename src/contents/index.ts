@@ -324,30 +324,7 @@ const items = [
         }
       } catch (error) {}
     }
-  },
-  {
-    // "replace links with titles",
-    page: "",
-    xpath: '//div[@data-testid="cellInnerDiv"]//a[@target]',
-    applyStyle: async (element) => {
-      try {
-        const value = await readStorageAsBoolean("replace_link_with_title")
-        if (!value) return
-        element.style.textDecoration = "none"
-
-        const url = element.href
-        if (!url.startsWith("https://t.co")) return
-        const finalUrl = await utils.getFinalUrl(url)
-
-        if (finalUrl) element.href = finalUrl
-
-        if (element.closest("[data-testid='card.wrapper']")) return
-
-        const title = await utils.getTitle(finalUrl)
-        element.textContent = title ? title : finalUrl
-      } catch (error) {}
-    }
-  },
+  },  
   {
     // "hide_premium_panel",
     page: "",
