@@ -1,7 +1,7 @@
 {
   "name": "twifiner",
   "displayName": "Twifiner",
-  "version": "3.1.0",
+  "version": "4.0.0",
   "description": "Fine-tune your 𝕏 (twitter) experience",
   "author": "Ayub Kokabi. <sir.kokabi@gmail.com>",
   "scripts": {
