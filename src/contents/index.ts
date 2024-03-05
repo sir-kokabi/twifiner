@@ -518,7 +518,7 @@ const items = [
         const value = await readStorageAsBoolean(
           "hide_tabHeader_in_notifications_page"
         )
-        element.style.display = value ? "none" : "flex"
+        element.style.visibility = value ? "hidden" : "flex"        
       } catch (error) {}
     }
   },
