@@ -1,6 +1,5 @@
 import logoAsBase64 from "data-base64:/assets/icon.png"
 
-import Toggle from "~popup/components/Toggle"
 import { getSimplifiedVersion } from "~utils"
 
 const Header = () => {

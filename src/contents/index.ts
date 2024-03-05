@@ -254,7 +254,6 @@ const items = [
         const text = element.innerText
 
         const isRtl = await utils.isRTL(text)
-        console.log(isRtl)
         if (isRtl) {
           if (changeFont) element.style.fontFamily = "Vazirmatn"
           element.style.direction = "rtl"
@@ -284,7 +283,6 @@ const items = [
         const text = element.innerText
 
         const isRtl = await utils.isRTL(text)
-        console.log(isRtl)
         if (isRtl) {
           if (changeFont) element.style.fontFamily = "Vazirmatn"
           element.style.direction = "rtl"

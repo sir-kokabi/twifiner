@@ -1,6 +1,6 @@
 import cssText from "data-text:~contents/styles.css"
 import type { PlasmoCSConfig, PlasmoGetInlineAnchor } from "plasmo"
-import React, { useEffect,useState } from "react"
+import React, { useState } from "react"
 
 import { readStorageAsBoolean, watchSettings } from "~storage"
 
