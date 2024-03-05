@@ -13,8 +13,7 @@ function cleanupText(text) {
   let normalizedText = text
 
   if (isPersian(text)) {
-    normalizedText = virastar.cleanup(text)
-    normalizedText = normalizedText.replace(/(.)\1{2,}/g, "$1$1") // Reduce more than 2 consecutive characters to 2
+    normalizedText = virastar.cleanup(text)    
   }
 
   return normalizedText
