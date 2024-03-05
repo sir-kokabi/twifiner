@@ -51,6 +51,7 @@ export const watchSettings = (callback) => {
     'hide_relevant_people',
     'hide_translate_link',
     'hide_reposts',
+    'hide_discover_more',
     'add_advanced_search',
     'clean_tweet_text',
     'is_label_shown',

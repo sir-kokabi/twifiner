@@ -24,6 +24,7 @@ const Features = () => {
         <Toggle id="hide_messages_box" title="Hide messages box" />
         <Toggle id="hide_relevant_people" title="Hide relevant people" />
         <Toggle id="hide_translate_link" title="Hide translate link" />
+        <Toggle id="hide_discover_more" title="Hide discover more" />
         <Toggle
           id="hide_tabHeader_in_notifications_page"
           title="Hide notification tab header"
