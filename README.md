@@ -99,7 +99,7 @@ https://twifiner.ir
 
 First download the latest release:
 
-<a href="https://github.com/sir-kokabi/twifiner/releases/latest">
+<a href="https://chromewebstore.google.com/detail/twifiner/fomidgcjldkakcdhohmgfggmbpkpofmn">
 <img src="icons/download.svg" alt="download" width="140"/>
 </a>
 
