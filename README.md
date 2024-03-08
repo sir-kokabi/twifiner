@@ -95,11 +95,11 @@ https://twifiner.ir
 
 ![](images/19.gif)
 
-## Hot to install
+## How to install manually
 
 First download the latest release:
 
-<a href="https://chromewebstore.google.com/detail/twifiner/fomidgcjldkakcdhohmgfggmbpkpofmn">
+<a href="https://github.com/sir-kokabi/twifiner/releases/latest">
 <img src="icons/download.svg" alt="download" width="140"/>
 </a>
 
