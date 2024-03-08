@@ -4,7 +4,7 @@
 
 **No More Ads or Clutter!** 🚀
 
-Twifiner is a browser extension that enhances your Twitter experience by removing ads, reducing clutter, and providing cool features like easier word muting, original URL display instead of t.co links, account age display, and more.
+Twifiner is a browser extension that enhances your Twitter experience by removing ads, reducing clutter, and providing cool features like easier word muting, account age display, and more.
 
 https://twifiner.ir
 
@@ -14,7 +14,7 @@ https://twifiner.ir
 
 <br>
 
-<a href="https://github.com/sir-kokabi/twifiner/releases/latest">
+<a href="https://chromewebstore.google.com/detail/twifiner/fomidgcjldkakcdhohmgfggmbpkpofmn">
 <img src="icons/download.svg" alt="download" width="140"/>
 </a>
 
@@ -127,8 +127,7 @@ Then follow the instructions below to install Twifiner in your browser:
 ## Support
 
 If you like this project, please consider supporting it with a star ⭐ or a donation. Every donation, no matter how small, is greatly appreciated.
-
-- Bitcoin: **1LUbbaAGKFkaSXgDhD4AAc8i2kipW6Qh2R**
-- Ethereum: **0xaEC3571C6207B05A41Ab35b40a4B6DF04A072450**
--  [پرداخت از داخل ایران](https://zarinp.al/kokabi)
+- https://reymit.ir/kokabi
+- Bitcoin: **bc1qfcp3xu48dxpvqm2sr9470t0hx3jk9e96tzek7e**
+- Lightning: **scarredwall45@walletofsatoshi.com**
 
