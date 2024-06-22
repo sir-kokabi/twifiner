@@ -27,7 +27,7 @@ const items = [
   {
     // "move_account_menu_to_top",
     page: "",
-    xpath: '//div[@aria-label="Account menu"]/ancestor::div[2]',
+    xpath: '//button[@aria-label="Account menu"]/ancestor::div[2]',
     applyStyle: async (element) => {
       try {
         const value = await readStorageAsBoolean("move_account_menu_to_top")
