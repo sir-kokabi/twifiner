@@ -18,7 +18,7 @@ const Features = () => {
           Some following features may require a page refresh to display changes:
         </p>
         <Toggle id="hide_ads_tweets" title="Hide ads in timeline" />
-        <Toggle id="hide_reposts" title="Hide reposts in timeline" />
+        <Toggle id="hide_reposts" title="Hide reposts" />
         <Toggle id="hide_trends_panel" title="Hide Trends" />
         <Toggle id="hide_whoToFollow_panel" title="Hide Who to follow" />
         <Toggle id="hide_messages_box" title="Hide messages box" />
