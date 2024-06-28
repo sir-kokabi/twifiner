@@ -2,6 +2,15 @@ import { Storage } from "@plasmohq/storage";
 
 const storage = new Storage();
 
+export const readStorage = async (key:string)=>{
+  return storage.get(key);
+}
+
+export const deleteStorageKey = async (key:string)=>{
+  await storage.remove(key);
+}
+
+
 export const readStorageAsBoolean = async (key:string)=>{
     const value = await storage.get(key);    
     return value=="true";

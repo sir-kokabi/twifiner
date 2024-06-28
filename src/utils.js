@@ -5,7 +5,7 @@ import persianRex from "persian-rex"
 import rtl from "rtl-detect"
 import Virastar from "virastar"
 
-import { readStorageAsList } from "./storage"
+import { readStorageAsList, readStorage, writeStorage, deleteStorageKey } from "./storage"
 
 var virastar = new Virastar({ cleanup_begin_and_end: false })
 
@@ -20,6 +20,7 @@ function cleanupText(text) {
 }
 
 function isPersian(text) {
+  if (!text) return false;  
   var totalCharacters = text.length
 
   var persianCharacters = 0
@@ -95,6 +96,19 @@ async function hasMuttedText(tweetText) {
   return mutedTexts.some((text) => {
     return wholeWordSearch(tweetText, text)
   })
+}
+
+async function getProfileNote(username) {
+  const profileNote = await readStorage(username)
+  return profileNote 
+}
+
+async function saveProfileNote(username, note) {
+  await writeStorage(username, note)   
+}
+
+async function deleteProfileNote(username) {
+  await deleteStorageKey(username)   
 }
 
 function evaluateXpath(xpath) {
@@ -198,5 +212,8 @@ export {
   evaluateXpath,
   bgColorForCurrentTheme,
   getCurrentTheme,
-  getSimplifiedVersion
+  getSimplifiedVersion,
+  getProfileNote,
+  saveProfileNote,
+  deleteProfileNote
 }
