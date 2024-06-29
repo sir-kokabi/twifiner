@@ -65,7 +65,7 @@ const ProfileNote = () => {
   const isNoteChanged = note !== originalNote;
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full font-[Vazirmatn]">
       <textarea
         className="w-full shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] p-3 rounded-md mt-2"
         style={{ direction: isPersian ? "rtl" : "ltr", border: "none" }}
@@ -78,18 +78,18 @@ const ProfileNote = () => {
       {isNoteChanged && (
         <>
           <button
-            className={`mt-2 px-4 py-1 bg-[#299cee] text-white rounded ${isPersian ? 'mr-auto' : 'ml-auto'} block`}
+            className={`mt-2 px-4 pt-1 bg-[#299cee] text-white rounded ${isPersian ? 'mr-auto' : 'ml-auto'} block`}
             onClick={saveNote}
           >
             Save
           </button>
-          <div className={`absolute bottom-2 ${isPersian ? 'right-2' : 'left-2'} text-xs px-2 py-1`}>
+          <div className={`absolute bottom-2 ${isPersian ? 'right-0' : 'left-0'} text-xs px-2 py-1`}>
             {remainingLength}
           </div>
         </>
       )}
       {showToast && (
-        <div className={`absolute bottom-2 ${isPersian ? 'left-2' : 'right-2'} text-xs px-2 py-1`}>
+        <div className={`absolute bottom-2 ${isPersian ? 'left-0' : 'right-0'} text-xs px-2 py-1`}>
           Saved
         </div>
       )}

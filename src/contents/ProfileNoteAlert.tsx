@@ -24,8 +24,9 @@ const ProfileNoteAlert = ({anchor}) => {
   const [isPersian, setIsPersian] = useState(false);
 
   const username = anchor.element.querySelector('div[data-testid="User-Name"] > div:nth-child(2) > div > div').textContent.replace("@","");
-
+  
   useEffect(() => {
+    
     utils.getProfileNote(username).then((value) => {
       if (typeof value === 'string' && value.trim() !== ''){
         setNote(value);
@@ -36,7 +37,7 @@ const ProfileNoteAlert = ({anchor}) => {
 
 
   return (
-    <span title={note} style={{ direction: isPersian ? "rtl" : "ltr", border: "none" }} className="font-bold text-sm">
+    <span title={note} style={{ direction: isPersian ? "rtl" : "ltr", border: "none", fontFamily:"Vazirmatn" }} className="font-light text-sm">
       {truncateString(note, 50)}
     </span>
   );

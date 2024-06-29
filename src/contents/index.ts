@@ -10,8 +10,25 @@ import {
 import * as utils from "~utils"
 
 export const config = {
-  matches: ["https://twitter.com/*", "https://x.com/*"]
+  matches: ["https://twitter.com/*", "https://x.com/*"],
 }
+
+// Create a style element
+var fa = document.createElement('style');
+fa.textContent = `
+    @font-face {
+        font-family: 'Vazirmatn';
+        src: url('${chrome.runtime.getURL('Vazirmatn.ttf')}') format('truetype');
+        font-weight: 100 900;;        
+    }
+    div[data-testid="tweetText"], [data-testid="UserDescription"] {
+        font-family: Vazirmatn, TwitterChirp, sans-serif !important;
+        font-weight: 400;
+    }
+`;
+
+// Append the style element to the document head
+document.head.appendChild(fa);
 
 const items = [
   //global
