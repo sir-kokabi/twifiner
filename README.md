@@ -128,6 +128,4 @@ Then follow the instructions below to install Twifiner in your browser:
 
 If you like this project, please consider supporting it with a star ⭐ or a donation. Every donation, no matter how small, is greatly appreciated.
 - https://reymit.ir/kokabi
-- Bitcoin: **bc1qfcp3xu48dxpvqm2sr9470t0hx3jk9e96tzek7e**
-- Lightning: **scarredwall45@walletofsatoshi.com**
 
