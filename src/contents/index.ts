@@ -665,19 +665,6 @@ const items = [
     }
   },
 
-  {
-    // "hide_inline_prompts",
-    page: "home",
-    xpath:
-      '//div[@data-testid="inlinePrompt"]/ancestor::div[@data-testid="cellInnerDiv"]',
-
-    applyStyle: async (element) => {
-      try {
-        element.style.display = "none"
-      } catch (error) {}
-    }
-  },
-
   //https://twitter.com/[username]/messages
   {
     // "change_tweet_datetime_style_in_messages_page",
