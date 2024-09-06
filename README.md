@@ -1,6 +1,7 @@
 # twifiner ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/sir-kokabi/twifiner/total)
-
-Twitter's frequent changes break the extension and demand significant development efforts. Therefore, I've chosen to discontinue the project due to low user adoption and minimal community involvement. Thank you for your support.
+> **🚨 Project Discontinuation:**
+>
+> Due to Twitter's frequent updates breaking the extension often and requiring a lot of development effort, I've chosen to stop working on this project. Low user adoption and little community involvement have also influenced this decision. Thank you for your support during this project.
 
 ## Fine-tune your 𝕏 (twitter) experience
 
